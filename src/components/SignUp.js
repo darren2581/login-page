@@ -1,19 +1,27 @@
 import React, { useState } from 'react';
-import { auth } from '../firebase';
+import { auth, db } from '../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { doc, setDoc } from 'firebase/firestore';
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // To navigate between pages
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Create a new user document in Firestore
+      await setDoc(doc(db, 'users', user.uid), {
+        email: user.email,
+      });
+
       console.log('Account Created');
-      navigate('/profile'); // Redirect to Profile page after successful signup
+      navigate('/profile');
     } catch (error) {
       console.log('Error', error.message);
     }

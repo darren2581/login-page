@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { auth, db } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
 import '../styles/Profile.css';
 
 const Profile = () => {
@@ -7,10 +9,26 @@ const Profile = () => {
   const [gender, setGender] = useState('');
   const [address, setAddress] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic, e.g., send data to backend
-    console.log('Profile Information:', { fullName, username, gender, address });
+    try {
+      const user = auth.currentUser;
+      if (user) {
+        // Add profile information to Firestore under the current user's uid
+        await setDoc(doc(db, 'users', user.uid), {
+          fullName,
+          username,
+          gender,
+          address,
+        }, { merge: true }); // merge: true to update existing fields without overwriting
+
+        console.log('Profile Information Saved');
+      } else {
+        console.log('No user is signed in');
+      }
+    } catch (error) {
+      console.error('Error saving profile information:', error);
+    }
   };
 
   return (
