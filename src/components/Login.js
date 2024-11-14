@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth'; // Correct function name
-import { Link } from 'react-router-dom';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate(); // Use navigate for redirection
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
             console.log('Login Successfully');
+            navigate('/profile-details'); // Redirect to ProfileDetails page after successful login
         } catch (error) {
             console.log('Error:', error.message);
         }
@@ -29,7 +31,7 @@ const Login = () => {
                     Password
                     <input type='password' name='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} />
                 </label>
-                <button type='submit'>Login</button> {/* Changed button text to "Login" */}
+                <button type='submit'>Log In</button>
                 <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
