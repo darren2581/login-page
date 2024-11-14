@@ -27,7 +27,7 @@
     color: #333;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
     .profile-details-container h2 {
       font-size: 1.5rem;
     }
@@ -43,6 +43,6 @@
   
     /* Reduce margin on smaller screens */
     .profile-details-container {
-      margin-top: 30px;
+      margin-top: 0px;
     }
   }
