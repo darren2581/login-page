@@ -74,22 +74,22 @@
     }
   
     .profile-form h1 {
-      font-size: 20px;
+      font-size: 23px;
     }
   
     .profile-form label {
-      font-size: 13px;
+      font-size: 16px;
     }
   
     .profile-form input,
     .profile-form select,
     .profile-form textarea {
-      font-size: 13px;
+      font-size: 16px;
       padding: 8px;
     }
   
     .profile-form button {
       padding: 8px;
-      font-size: 14px;
+      font-size: 17px;
     }
   }

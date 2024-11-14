@@ -111,24 +111,24 @@ body {
   }
 
   .auth-form h1 {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .auth-form label {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .auth-form input {
     padding: 8px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .auth-form button {
     padding: 10px;
-    font-size: 14px;
+    font-size: 17px;
   }
 
   .auth-form p {
-    font-size: 13px;
+    font-size: 16px;
   }
 }

@@ -43,6 +43,6 @@
   
     /* Reduce margin on smaller screens */
     .profile-details-container {
-      margin-top: 30px;
+      margin-top: 0px;
     }
   }
