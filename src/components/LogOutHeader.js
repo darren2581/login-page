@@ -13,7 +13,7 @@ const LogOutHeader = () => {
   return (
     <header className="logout-header">
       <div className="header-content">
-        <h1 className="app-title">MyApp</h1>
+        <h1 className="app-title">App</h1>
         <button onClick={handleSignOutRedirect} className="logout-button">Log Out</button>
       </div>
     </header>
