@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { auth } from '../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth'; // Correct function name
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ const Login = () => {
                     <input type='password' name='password' placeholder='Enter your password' onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <button type='submit'>Login</button> {/* Changed button text to "Login" */}
-                <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+                <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
     );
