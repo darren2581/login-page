@@ -8,7 +8,7 @@ import Login from './Login';
 import SignOut from './SignOut';
 import Profile from './Profile';
 import ProfileDetails from './ProfileDetails';
-import { MainPage } from './MainPage';  // Named import
+import MainPage from './MainPage';  // Named import
 
 
 const Authentication = () => {
