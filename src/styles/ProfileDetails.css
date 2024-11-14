@@ -1,6 +1,13 @@
+.profile-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .profile-details-container {
     text-align: center;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .profile-details-container h2 {
@@ -11,10 +18,10 @@
 .profile-details {
     text-align: left;
     background: #f8f8f8;
-    width: 25rem;
+    /* width: 90%; */
     padding: 20px;
     border-radius: 8px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
 }
 
 .profile-details p {
@@ -28,6 +35,10 @@
 }
 
 @media (max-width: 480px) {
+  .profile-details-container {
+    padding: 20px;
+}
+
     .profile-details-container h2 {
       font-size: 1.5rem;
     }
@@ -39,10 +50,5 @@
   
     .profile-details p {
       font-size: 0.9rem;
-    }
-  
-    /* Reduce margin on smaller screens */
-    .profile-details-container {
-      margin-top: 0px;
     }
   }
