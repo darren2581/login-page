@@ -11,9 +11,9 @@
 .profile-details {
     text-align: left;
     background: #f8f8f8;
+    width: 25rem;
     padding: 20px;
     border-radius: 8px;
-    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -34,7 +34,7 @@
   
     .profile-details {
       padding: 10px;
-      max-width: 100%;
+      width: 20rem;
     }
   
     .profile-details p {
