@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { auth } from './firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import HomePage from './components/HomePage';
+import RegistrationPage from './components/RegistrationPage';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
 import SignOut from './components/SignOut';
@@ -31,7 +31,7 @@ function App() {
         <div className="content">
           <Routes>
             {/* Public Routes */}
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<RegistrationPage />} />
             <Route path="/signup" element={user ? <Navigate to="/profile-details" /> : <SignUp />} />
             <Route path="/login" element={user ? <Navigate to="/profile-details" /> : <Login />} />
 
