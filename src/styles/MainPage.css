@@ -1,9 +1,7 @@
 .mainPageContainer {
-    background-color: #fff;
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    font-size: 24px;
-    color: #333;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
   }
   
