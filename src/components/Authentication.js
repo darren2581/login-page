@@ -8,7 +8,8 @@ import Login from './Login';
 import SignOut from './SignOut';
 import Profile from './Profile';
 import ProfileDetails from './ProfileDetails';
-import '../styles/Authentication.css';
+import { MainPage } from './MainPage';  // Named import
+
 
 const Authentication = () => {
     const [user, setUser] = useState(null);
@@ -39,6 +40,8 @@ const Authentication = () => {
             <Route path="/signout" element={user ? <SignOut /> : <Navigate to="/login" />} />
             <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
             <Route path="/profile-details" element={user ? <ProfileDetails /> : <Navigate to="/login" />} />
+
+            <Route path="/mainpage" element={<MainPage />} />
           </Routes>
         </div>
       </BrowserRouter>
