@@ -1,0 +1,28 @@
+.profile-details-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.profile-details-container h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.profile-details {
+    text-align: left;
+    background: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.profile-details p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.profile-details p strong {
+    
+}

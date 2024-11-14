@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Profile.css';
 
 const Profile = () => {
@@ -8,21 +9,23 @@ const Profile = () => {
   const [username, setUsername] = useState('');
   const [gender, setGender] = useState('');
   const [address, setAddress] = useState('');
+  const navigate = useNavigate(); // Add navigation hook
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const user = auth.currentUser;
       if (user) {
-        // Add profile information to Firestore under the current user's uid
+        // Save profile information to Firestore under the current user's uid
         await setDoc(doc(db, 'users', user.uid), {
           fullName,
           username,
           gender,
           address,
-        }, { merge: true }); // merge: true to update existing fields without overwriting
+        }, { merge: true });
 
         console.log('Profile Information Saved');
+        navigate('/profile-details'); // Redirect to ProfileDetails page
       } else {
         console.log('No user is signed in');
       }
