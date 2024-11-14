@@ -24,5 +24,25 @@
 }
 
 .profile-details p strong {
-    
+    color: #333;
 }
+
+@media (max-width: 480px) {
+    .profile-details-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .profile-details {
+      padding: 10px;
+      max-width: 100%;
+    }
+  
+    .profile-details p {
+      font-size: 0.9rem;
+    }
+  
+    /* Reduce margin on smaller screens */
+    .profile-details-container {
+      margin-top: 30px;
+    }
+  }
